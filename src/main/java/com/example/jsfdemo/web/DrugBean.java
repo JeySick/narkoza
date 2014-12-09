@@ -87,49 +87,19 @@ public class DrugBean implements Serializable {
 	}
 	
 	
+	public void uniqueId(FacesContext context, UIComponent component,
+			Object value) {
 
-	// Validators
-//
-//	// Business logic validation
-//	public void uniquePin(FacesContext context, UIComponent component,
-//			Object value) {
-//
-//		String pin = (String) value;
-//
-//		for (Person person : dealer.getAllPersons()) {
-//			if (person.getPin().equalsIgnoreCase(pin)) {
-//				FacesMessage message = new FacesMessage(
-//						"Person with this PIN already exists in database");
-//				message.setSeverity(FacesMessage.SEVERITY_ERROR);
-//				throw new ValidatorException(message);
-//			}
-//		}
-//	}
-//
-//	// Multi field validation with <f:event>
-//	// Rule: first two digits of PIN must match last two digits of the year of
-//	// birth
-//	public void validatePinDob(ComponentSystemEvent event) {
-//
-//		UIForm form = (UIForm) event.getComponent();
-//		UIInput pin = (UIInput) form.findComponent("pin");
-//		UIInput dob = (UIInput) form.findComponent("dob");
-//
-//		if (pin.getValue() != null && dob.getValue() != null
-//				&& pin.getValue().toString().length() >= 2) {
-//			String twoDigitsOfPin = pin.getValue().toString().substring(0, 2);
-//			Calendar cal = Calendar.getInstance();
-//			cal.setTime(((Date) dob.getValue()));
-//
-//			String lastDigitsOfDob = ((Integer) cal.get(Calendar.YEAR))
-//					.toString().substring(2);
-//
-//			if (!twoDigitsOfPin.equals(lastDigitsOfDob)) {
-//				FacesContext context = FacesContext.getCurrentInstance();
-//				context.addMessage(form.getClientId(), new FacesMessage(
-//						"PIN doesn't match date of birth"));
-//				context.renderResponse();
-//			}
-//		}
-//	}
+		String pin = value.toString();
+
+		for (Drug drug : dealer.getAllDrugs()) {
+			if (drug.getDrugId().toString().equalsIgnoreCase(pin)) {
+				FacesMessage message = new FacesMessage(
+						"You've already used this drug. You can't think right now. You are high.");
+				message.setSeverity(FacesMessage.SEVERITY_ERROR);
+				throw new ValidatorException(message);
+			}
+		}
+	}
+	
 }

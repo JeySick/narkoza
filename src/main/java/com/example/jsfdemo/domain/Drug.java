@@ -1,5 +1,7 @@
 package com.example.jsfdemo.domain;
 
+import javax.validation.constraints.Size;
+
 public class Drug {
 	private String drugName = "";
 	private Integer drugId;
@@ -8,6 +10,7 @@ public class Drug {
 	private String opisDzialania = "";
 	private String rodzina = "";
 
+	@Size(min=2, max=11)
 	public String getDrugName() {
 		return drugName;
 	}

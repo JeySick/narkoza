@@ -13,7 +13,7 @@
 				<br/>
 				
 				<h:outputText value="#{msg.drugId}" />
-				<h:inputText id="drugId" value="#{drugBean.drug.drugId}" />
+				<h:inputText id="drugId" value="#{drugBean.drug.drugId}" validator="#{drugBean.uniqueId}" required="#{true}"/>
 				
 				<br/>		 
 				
