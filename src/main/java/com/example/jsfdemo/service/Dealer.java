@@ -36,6 +36,20 @@ public class Dealer {
 		if (drugToUse != null)
 			db.remove(drugToUse);
 	}
+	
+	public void updateDrug(Drug drug) {
+//		Drug drugToUpdate = null;
+//		for (Drug d : db) {
+//			if (drug.getDrugId().equals(d.getDrugId())) {
+//				drugToUpdate = d;
+//				break;
+//			}
+//		}
+//		if (drugToUpdate != null) {
+//			drugToUpdate.setDrugName(drug.getDrugName());
+//		}
+//		
+	}
 
 	public List<Drug> getAllDrugs() {
 		return db;

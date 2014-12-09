@@ -1,6 +1,7 @@
 package com.example.jsfdemo.web;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -28,11 +29,15 @@ public class DrugBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Drug drug = new Drug();
-
+	private Drug drugToUpdate = new Drug();
+	
 	private ListDataModel<Drug> drugs = new ListDataModel<Drug>();
 
+	
 	@Inject
 	private Dealer dealer;
+
+
 
 	public Drug getDrug() {
 		return drug;
@@ -40,6 +45,15 @@ public class DrugBean implements Serializable {
 
 	public void setDrug(Drug drug) {
 		this.drug = drug;
+	}
+	
+	
+	public Drug getDrugToUpdate() {
+		return drugToUpdate;
+	}
+
+	public void setDrugToUpdate(Drug drugToUpdate) {
+		this.drugToUpdate = drugToUpdate;
 	}
 
 	public ListDataModel<Drug> getAllDrugs() {
@@ -61,9 +75,18 @@ public class DrugBean implements Serializable {
 	}
 	
 	public String updateDrug() {
-		return "addDrug";
+		Drug drugToUpdate = drugs.getRowData();
+		this.drugToUpdate = drugToUpdate;
+		return "updateDrug";
 		
 	}
+	
+	public String updateThisDrug() {
+		dealer.updateDrug(drugToUpdate);
+		return "showDrugs";
+	}
+	
+	
 
 	// Validators
 //

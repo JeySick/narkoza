@@ -8,19 +8,19 @@
 		<h:form id="drugForm">
 
 				<h:outputText value="#{msg.drugName}" />
-				<h:inputText id="drugName" value="#{drugBean.drug.drugName}" />
+				<h:inputText id="drugName" value="#{drugBean.drugToUpdate.drugName}" />
 
 				<br/>
 				
 				<h:outputText value="#{msg.drugId}" />
-				<h:inputText id="drugId" value="#{drugBean.drug.drugId}" />
+				<h:inputText id="drugId" value="#{drugBean.drugToUpdate.drugId}" readonly="true" />
 				
 				<br/>		 
 				
 				<h:outputText value="#{msg.rodzaj}" />
 				<br/>
 				
-				<h:selectOneRadio id="rodzaj" value="#{drugBean.drug.rodzaj}">
+				<h:selectOneRadio id="rodzaj" value="#{drugBean.drugToUpdate.rodzaj}">
 				   	<f:selectItem itemValue="Twarde" itemLabel="Twarde"/>
 				   	<f:selectItem itemValue="Miekkie" itemLabel="Miekkie"  />
 				</h:selectOneRadio>
@@ -30,7 +30,7 @@
 				<h:outputText value="#{msg.symptomy}" />
 				
 				<br/>
-				<h:selectOneRadio id="symptomy" value="#{drugBean.drug.symptomy}">
+				<h:selectOneRadio id="symptomy" value="#{drugBean.drugToUpdate.symptomy}">
 				   	<f:selectItem itemValue="Pocenie sie" itemLabel="Pocenie sie"/>
 				   	<f:selectItem itemValue="Brak laknienia" itemLabel="Brak laknienia"  />
 				   	<f:selectItem itemValue="Swiatlowstret" itemLabel="Swiatlowstret"  />
@@ -41,19 +41,19 @@
 				<br/>
 				
 				<h:outputText value="#{msg.opisDzialania}" />
-				<h:inputTextarea cols="10" rows="5" id="opisDzialania" value="#{drugBean.drug.opisDzialania}" />
+				<h:inputTextarea cols="10" rows="5" id="opisDzialania" value="#{drugBean.drugToUpdate.opisDzialania}" />
 	<br/>			
 				<h:outputText value="#{msg.rodzina}" />
 				<br/>
-				<h:selectOneMenu id="rodzina" value="#{drugBean.drug.rodzina}">
+				<h:selectOneMenu id="rodzina" value="#{drugBean.drugToUpdate.rodzina}">
 				   	<f:selectItem itemValue="Opiaty" itemLabel="Opiaty" />
 				   	<f:selectItem itemValue="Psychostymulanty" itemLabel="Psychostymulanty" />
 				   	<f:selectItem itemValue="Benzodiazepiny" itemLabel="Benzodiazepiny" />
 				</h:selectOneMenu>
 				
 
-			<h:commandButton value="#{msg.personFormOKButton}"
-				action="#{drugBean.addDrug}" />
+			<h:commandButton value="#{msg.updateThisDrugmf}"
+				action="#{drugBean.updateThisDrug}" />
 				
 			<h:panelGrid>
 				<h:messages showDetail="#{true}" showSummary="#{false}" />

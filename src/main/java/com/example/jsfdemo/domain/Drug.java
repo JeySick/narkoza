@@ -5,7 +5,6 @@ public class Drug {
 	private Integer drugId;
 	private String rodzaj = "";
 	private String symptomy = "";
-	// symptomy-hobby
 	private String opisDzialania = "";
 	private String rodzina = "";
 
