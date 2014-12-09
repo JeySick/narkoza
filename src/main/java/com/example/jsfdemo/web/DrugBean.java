@@ -59,6 +59,11 @@ public class DrugBean implements Serializable {
 		dealer.deleteDrug(drugToUse);
 		return null;
 	}
+	
+	public String updateDrug() {
+		return "addDrug";
+		
+	}
 
 	// Validators
 //
