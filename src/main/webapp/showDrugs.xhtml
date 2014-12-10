@@ -8,37 +8,37 @@
 	<ui:define name="content">
 	
     <h:form>
-    
+    <center>
      <h:dataTable value="#{drugBean.allDrugs}" var="item">
       <f:facet name="header">#{msg.personAllLabel}</f:facet>
       
       <h:column>
-        <f:facet name="header">#{msg.personFirstNameLabel}</f:facet>
+        <f:facet name="header">#{msg.drugNameLabel}</f:facet>
         #{item.drugName}
       </h:column>
       
       <h:column>
-        <f:facet name="header">#{msg.personFirstNameLabel}</f:facet>
+        <f:facet name="header">#{msg.drugIdLabel}</f:facet>
         #{item.drugId}
       </h:column>
       
       <h:column>
-        <f:facet name="header">#{msg.personFirstNameLabel}</f:facet>
+        <f:facet name="header">#{msg.drugRodzajLabel}</f:facet>
         #{item.rodzaj}
       </h:column>
       
       <h:column>
-        <f:facet name="header">#{msg.personFirstNameLabel}</f:facet>
+        <f:facet name="header">#{msg.drugSymptomyLabel}</f:facet>
         #{item.symptomy}
       </h:column>
       
       <h:column>
-        <f:facet name="header">#{msg.personPinLabel}</f:facet>
+        <f:facet name="header">#{msg.drugOpisLabel}</f:facet>
         #{item.opisDzialania}
       </h:column>
       
       <h:column>
-        <f:facet name="header">#{msg.personFirstNameLabel}</f:facet>
+        <f:facet name="header">#{msg.drugRodzinaLabel}</f:facet>
         #{item.rodzina}
       </h:column>
       
@@ -53,6 +53,7 @@
       </h:column>
       
      </h:dataTable>
+     </center>
     </h:form>
       
 	</ui:define>
